@@ -1,5 +1,5 @@
 from django.urls import path
-from producto.views import ArticuloList, Home, Contacto, Tienda
+from producto.views import ArticuloList, Home, Tienda
 from django.conf import settings
 from django.conf.urls.static import static
 #from config import views

@@ -16,9 +16,6 @@ def Tienda(request):
 
     return render(request,"producto/tienda.html")
 
-def Contacto(request):
-
-    return HttpResponse("Contacto")
 
 class ArticuloList(ListView):
     model = Articulo
