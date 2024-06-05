@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'producto:articulo_lista' %}"
+                      method="get"
+                      class="input-group">
+                    <input type="text"
+                           name="busqueda"
+                           class="form-control"
+                           placeholder="Buscar...">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit">Buscar</button>
+                    </div>
+                </form>
+                {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    </ul>
+    {% else %}
+    {% for articulo in articulolista  %}
+        {{articulo.nombre}}
+        {{articulo.precio}}
+    {% endfor %}
+    {% endif %}
+</body>
+</html>
