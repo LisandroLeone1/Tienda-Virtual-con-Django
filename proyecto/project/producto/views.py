@@ -11,12 +11,6 @@ def Home(request):
     return render(request,"producto/home.html")
 
 
-
-def Tienda(request):
-
-    return render(request,"producto/tienda.html")
-
-
 class ArticuloList(ListView):
     model = Articulo
     context_object_name = "articulolista"

@@ -286,3 +286,11 @@ ul.errorlist{
 .linkCategorias:hover{
   text-decoration: none;
 }
+.contenedorFormulario{
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50%;
+  margin: 30px auto;
+  border-radius: 5;
+  padding: 1px;
+
+}

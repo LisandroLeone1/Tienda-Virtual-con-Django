@@ -1,0 +1,44 @@
+
+{% extends 'producto/base.html' %}
+{% load static %}
+
+{% block body_tittle %}
+<span class="site-heading-lower">Tienda</span>
+{% endblock body_tittle %}
+
+{% block content %}
+
+<section style="margin-top: 20px;"> <!-- Le da  un margen de separacion con el footer-->
+  <div style="width: 75%; margin: auto; text-align: center; color: white;">
+     Categorias:
+     {% for articulo in producto %}
+
+     {% for categoria in articulo.categorias.all %}
+        <a href="{% url 'tienda:categoria_producto' categoria.id %}" class="linkCategorias">{{categoria.categoria}}</a> 
+     {% endfor %}
+         
+     {% endfor %}
+  </div>
+</section>
+
+
+<div class="container">
+   <div class="row">
+{% for articulo in producto  %}
+
+        <div class="col-md-3">
+             <div class="card" style="width: 100%; margin: 20px 20px;">
+                  <img src="{{articulo.imagen.url}}" class="card-img-top">
+                    <div class="card-body text-center">
+                       <h6 class="card-tittle">{{articulo.nombre}}</h6>
+                       <p class="card-text">${{articulo.precio}}</p>
+
+                    </div>
+             </div>
+        </div>
+
+
+  {% endfor %}
+   </div>
+</div>
+{% endblock content %}

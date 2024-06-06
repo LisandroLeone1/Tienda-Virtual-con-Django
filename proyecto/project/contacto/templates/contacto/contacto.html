@@ -3,5 +3,18 @@
 {% load static %}
 
 {% block content %}
-<div style="color: white;"><p>{{miFormulario}}</p></div>
+<div class="contenedorFormulario" > 
+
+    {% if "valido" in request.GET %}
+        <p style="color: white; text-align: center;">Has enviado la informacion correctamente</p>
+    {% endif %}
+
+    <form action="" method="POST" style="text-align: center;">
+        {% csrf_token %}
+    <table style="color: white; margin: 20px;">{{miFormulario.as_table}}</table>
+    <input type="submit" value="enviar" stywith="150px">
+
+    </form>
+</div>
+<P style="color: white;">{{request.POST}}</P>
 {% endblock content %}
