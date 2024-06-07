@@ -1,0 +1,21 @@
+{% extends 'producto/base.html' %}
+{% load static %}
+
+{% block body_tittle %}
+<span class="site-heading-lower">Login</span>
+{% endblock body_tittle %}
+
+{% block content %}
+<div class="contenedorFormulario" > 
+ <form method="post">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <input type="hidden" name="next" value="{% url 'producto:home' %}" />
+    <button type="submit" class="btn btn-primary ">Iniciar Sesion</button>
+    <a href="{% url 'producto:home' %}" class="btn btn-secondary ">Cancelar</a>
+    <a href="{% url 'login:register' %}" class="btn btn-primary">Crear Cuenta</a>
+ </form>
+ </div>
+ {% endblock content %}
