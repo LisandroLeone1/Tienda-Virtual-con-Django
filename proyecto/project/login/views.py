@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from .forms import CustomAuthenticationForm, CustomUserCreationForm
 from django.http import HttpResponse, HttpRequest
+from django.contrib.auth import logout
 
 def index(request):
     return render(request,"core/index.html")
@@ -20,3 +21,10 @@ def register(request: HttpRequest):
     else:
         form = CustomUserCreationForm
     return render(request, "login/register.html",{"form": form})
+
+
+def cerrar_sesion(request):
+    logout(request)
+    cerrar = logout(request)
+    return render(request, "producto/home.html",{"cerrar": cerrar})
+    

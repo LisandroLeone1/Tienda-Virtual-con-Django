@@ -4,6 +4,22 @@
 
 {% block content %}
     
+    <div style="text-align: center; color: white;">
+      {% if user.is_athenticated %}
+       Bienvenido {{user.username}}
+        
+      {% endif %}
+      {% if mensaje %}
+         {{mensaje}} ¡Bienvenido!
+        {% endif %}
+      
+        {% if cerrar %}
+        ¡Hasta Luego!
+        {% endif %}
+    </div>
+
+
+
    <!-- Heading -->
    <section class="page-section clearfix">
     <div class="container">
@@ -13,7 +29,7 @@
           <h2 class="section-heading mb-4" >
             <span class="section-heading-upper">Puntualidad</span>
             <span class="section-heading-lower">El mejor stock</span>
-          </h2>
+          </h2> 
           <p class="mb-3">En la puertra de tu casa en menos de 48 h con el envío normal. En menos de 24 h con el envío express.
           </p>
          

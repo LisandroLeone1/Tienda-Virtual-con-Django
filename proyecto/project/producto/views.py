@@ -1,13 +1,14 @@
 from django.shortcuts import render, HttpResponse
 from django.views.generic import ListView
 from django.db.models.query import QuerySet
+from carro.carro import Carro
 from producto.models import Cliente, Articulo, Pedidos
 from typing import Any
 from django.contrib import messages
 
 
 def Home(request):
-
+    carro = Carro(request)
     return render(request,"producto/home.html")
 
 

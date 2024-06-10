@@ -18,6 +18,7 @@
 
         </th>
     </tr>
+    {% if user.is_authenticated %}
     <tr>
         <th>Producto</th>
         <th>Cantidad</th>
@@ -27,7 +28,10 @@
     </tr>
 
 </thead>
+
 <tbody>
+    
+
      {% if request.session.carro.items %}
         {% for key,value in request.session.carro.items %}
           <tr class="text-center">
@@ -46,7 +50,7 @@
      <tr>
         <td colspan="3">
            <div class="alert alert-danger text-center ">
-             Sin productos
+             El carro esta vacio
            </div>
 
         </td>
@@ -63,8 +67,18 @@
         
         </td>
     </tr>
-</tfoot>
 
+</tfoot>
+{% else %}
+<tr class="text-center">
+    <td>Debes iniciar sesion 
+        <br>
+        <br>
+        <a href="{% url 'login:login' %}" class="btn btn-primary">Iniciar Sesion</a> 
+    </td>
+
+</tr>
+{% endif %}
 </table>
 </div>
 {% endblock content %}
