@@ -7,78 +7,59 @@
 
 {% block content %}
 
-<div class="contenedorFormulario" >
-<table class="table table-bordered" style="color: white;">
-
-<thead>
-    <tr>
-        <th colspan="3" class="text-center">
-
-            Carro Compras
-
-        </th>
-    </tr>
-    {% if user.is_authenticated %}
-    <tr>
-        <th>Producto</th>
-        <th>Cantidad</th>
-        <th>Total</th>
-
-
-    </tr>
-
-</thead>
-
-<tbody>
-    
-
-     {% if request.session.carro.items %}
-        {% for key,value in request.session.carro.items %}
-          <tr class="text-center">
-            <td>{{value.nombre}}</td>
-            <td>{{value.cantidad}}</td>
-            <td>
-                <a href="{% url 'carro:agregar' value.producto_id%} " class="btn btn-sm btm-success">+</a>
-                <a href="{% url 'carro:restar' value.producto_id%} " class="btn btn-sm btm-success">-</a>
-                ${{value.precio}}
-            </td>
-
-          </tr>
-            
-        {% endfor %}
-     {% else %}
-     <tr>
-        <td colspan="3">
-           <div class="alert alert-danger text-center ">
-             El carro esta vacio
-           </div>
-
-        </td>
-     </tr>
-     {% endif %}
-
-</tbody>
-
-<tfoot>
-    <tr>
-        <td colspan="3" class="text-center">
-            Total: ${{importe_total_carro}} 
-
-        
-        </td>
-    </tr>
-
-</tfoot>
-{% else %}
-<tr class="text-center">
-    <td>Debes iniciar sesion 
-        <br>
-        <br>
-        <a href="{% url 'login:login' %}" class="btn btn-primary">Iniciar Sesion</a> 
-    </td>
-
-</tr>
-{% endif %}
-</table>
+<div class="contenedorFormulario">
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th colspan="3" class="text-center">Carro de Compras</th>
+            </tr>
+            {% if user.is_authenticated %}
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if request.session.carro.items %}
+            {% for key, value in request.session.carro.items %}
+            <tr>
+                <td>{{ value.nombre }}</td>
+                <td>{{ value.cantidad }}</td>
+                <td>
+                    <a href="{% url 'carro:agregar' value.producto_id %}" class="btn btn-sm btn-success">+</a>
+                    <a href="{% url 'carro:restar' value.producto_id %}" class="btn btn-sm btn-danger">-</a>
+                    ${{ value.precio }}
+                </td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="3">
+                    <div class="alert alert-danger text-center">
+                        El carro está vacío
+                    </div>
+                </td>
+            </tr>
+            {% endif %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-center">Total: ${{ importe_total_carro }}</td>
+            </tr>
+            {% if request.session.carro.items %}
+            <tr>
+                <td colspan="3" style="text-align: center;">
+                    <a href="#" class="btn btn-primary">Hacer Pedido</a>
+                </td>
+            </tr>
+            {% endif %}
+        </tfoot>
+        {% else %}
+        <tr class="text-center">
+            <td colspan="3">Debes iniciar sesión</td>
+        </tr>
+        {% endif %}
+    </table>
 </div>
 {% endblock content %}

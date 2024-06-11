@@ -1,6 +1,6 @@
 body {
   font-family: 'Lora';
-  background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/bg_main.jpg");
+  background-image: url("../img/bg_main.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -24,6 +24,10 @@ p {
 }
 
 .site-heading {
+  background-color: rgba(8, 12, 7, 0.8);
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
   margin-top: 5rem;
   margin-bottom: 5rem;
   text-transform: uppercase;
@@ -53,6 +57,7 @@ p {
 }
 
 .section-heading .section-heading-upper {
+  color: rgb(197, 141, 38);
   display: block;
   font-size: 1rem;
   font-weight: 800;
@@ -134,7 +139,7 @@ p {
     left: 600;
     width: 60%;
     margin-top: 3rem;
-    background-color: rgb(5, 7, 4);
+    background-color:  rgba(8, 12, 7, 0.8);
     color: cornsilk;
     position: absolute;
   }
@@ -162,7 +167,7 @@ p {
   position: relative;
   padding: 3rem;
   margin: 0.5rem;
-  background-color: rgb(2, 1, 1);
+  background-color: rgba(8, 12, 7, 0.8);
   color: cornsilk;
 }
 
@@ -293,4 +298,16 @@ ul.errorlist{
   border-radius: 5;
   padding: 1px;
 
+}
+
+.btn-custom {
+  background-color: rgb(235, 158, 17);
+  border-color: rgb(235, 158, 17);
+  color: white !important;
+
+}
+
+.btn-custom:hover {
+  background-color: darken(rgb(235, 158, 17), 10%); /* Cambia el tono del color al 10% más oscuro cuando el mouse está encima */
+  border-color: darken(rgb(235, 158, 17), 10%);
 }
