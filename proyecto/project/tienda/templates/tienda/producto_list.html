@@ -13,8 +13,8 @@
       Categorias:
       {% for articulo in producto %}
  
-      {% for categoria in producto.categorias.all %}
-          {{categoria.categoria}}
+      {% for categoria in articulo.categorias.all %}
+      <a href="{% url 'tienda:categoria_producto' categoria.id %}" class="linkCategorias">{{categoria.categoria}}</a> 
       {% endfor %}
           
       {% endfor %}

@@ -294,7 +294,7 @@ ul.errorlist{
 }
 
 .linkCategorias{
-  color: white !important; /* el important indica que este estilo tiene preferias sobre otro estilo que interfiera */
+  color: black !important; /* el important indica que este estilo tiene preferias sobre otro estilo que interfiera */
   text-decoration: underline;
 }
 

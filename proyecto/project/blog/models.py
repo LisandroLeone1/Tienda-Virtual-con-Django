@@ -14,7 +14,7 @@ class Categoria(models.Model):
         return self.nombre
     
 class Post(models.Model):
-    titulo = models.CharField(max_length=50)
+    titulo = models.CharField(max_length=100)
     contenido = models.CharField(max_length=50)
     imagen = models.ImageField(null=True,blank=True,upload_to='blog') 
     autor = models.ForeignKey(User,on_delete=models.CASCADE)
