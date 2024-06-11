@@ -42,9 +42,11 @@ p {
 }
 
 .site-heading .site-heading-lower {
+  color: white;
   font-size: 5rem;
   font-weight: 100;
   line-height: 4rem;
+  text-align: center;
 }
 
 .page-section {
@@ -57,15 +59,23 @@ p {
 }
 
 .section-heading .section-heading-upper {
-  color: rgb(197, 141, 38);
+  color: white;
   display: block;
   font-size: 1rem;
   font-weight: 800;
   padding-bottom:.5rem;
+}
 
+.section-heading .section-heading-service{
+  color: white;
+  display: block;
+  font-size: 0,2rem;
+  font-weight: 800;
+  padding-bottom:.5rem;
 }
 
 .section-heading .section-heading-lower {
+  color: rgb(235, 158, 17);
   display: block;
   font-size: 3rem;
   font-weight: 100;
@@ -310,4 +320,19 @@ ul.errorlist{
 .btn-custom:hover {
   background-color: darken(rgb(235, 158, 17), 10%); /* Cambia el tono del color al 10% más oscuro cuando el mouse está encima */
   border-color: darken(rgb(235, 158, 17), 10%);
+}
+
+.card-text {
+  color: rgb(235, 158, 17); /* Color de texto naranja */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 1.2rem; /* Tamaño de fuente */
+  font-family: Arial, sans-serif;
+}
+
+.card-titulo {
+  color: black; /* Color de texto naranja */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 1rem; /* Tamaño de fuente */
+  font-family: 'Lucida Sans';
+  margin-top: 0.1rem;
 }

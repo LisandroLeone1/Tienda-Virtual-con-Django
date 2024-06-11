@@ -6,60 +6,72 @@
 {% endblock body_tittle %}
 
 {% block content %}
-
-<div class="contenedorFormulario">
-    <table class="table table-bordered table-hover">
-        <thead class="table-dark">
-            <tr>
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+              <tr>
                 <th colspan="3" class="text-center">Carro de Compras</th>
-            </tr>
-            {% if user.is_authenticated %}
-            <tr>
+              </tr>
+              {% if user.is_authenticated %}
+              <tr>
                 <th>Producto</th>
                 <th>Cantidad</th>
                 <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% if request.session.carro.items %}
-            {% for key, value in request.session.carro.items %}
-            <tr>
+              </tr>
+            </thead>
+            <tbody>
+              {% if request.session.carro.items %}
+              {% for key, value in request.session.carro.items %}
+              <tr>
                 <td>{{ value.nombre }}</td>
                 <td>{{ value.cantidad }}</td>
                 <td>
-                    <a href="{% url 'carro:agregar' value.producto_id %}" class="btn btn-sm btn-success">+</a>
-                    <a href="{% url 'carro:restar' value.producto_id %}" class="btn btn-sm btn-danger">-</a>
-                    ${{ value.precio }}
+                  <a href="{% url 'carro:agregar' value.producto_id %}" class="btn btn-sm btn-success">+</a>
+                  <a href="{% url 'carro:restar' value.producto_id %}" class="btn btn-sm btn-danger">-</a>
+                  ${{ value.precio }}
                 </td>
-            </tr>
-            {% endfor %}
-            {% else %}
-            <tr>
+              </tr>
+              {% endfor %}
+              {% else %}
+              <tr>
                 <td colspan="3">
-                    <div class="alert alert-danger text-center">
-                        El carro está vacío
-                    </div>
+                  <div class="alert alert-danger text-center">
+                    El carro está vacío
+                  </div>
                 </td>
-            </tr>
-            {% endif %}
-        </tbody>
-        <tfoot>
-            <tr>
+              </tr>
+              {% endif %}
+            </tbody>
+            <tfoot>
+              <tr>
                 <td colspan="3" class="text-center">Total: ${{ importe_total_carro }}</td>
-            </tr>
-            {% if request.session.carro.items %}
-            <tr>
+              </tr>
+              {% if request.session.carro.items %}
+              <tr>
                 <td colspan="3" style="text-align: center;">
-                    <a href="#" class="btn btn-primary">Hacer Pedido</a>
+                  <a href="#" class="btn btn-primary">Hacer Pedido</a>
                 </td>
+              </tr>
+              {% endif %}
+            </tfoot>
+            {% else %}
+            <tr class="text-center">
+              <td colspan="3">Debes iniciar sesión para comenzar a comprar</td>
+            </tr>
+            <tr>
+              <td colspan="3" style="text-align: center;">
+                <a href="{% url 'login:login' %}" class="btn btn-primary">Iniciar sesión</a>
+              </td>
             </tr>
             {% endif %}
-        </tfoot>
-        {% else %}
-        <tr class="text-center">
-            <td colspan="3">Debes iniciar sesión</td>
-        </tr>
-        {% endif %}
-    </table>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock content %}

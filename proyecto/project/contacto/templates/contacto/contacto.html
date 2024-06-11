@@ -1,20 +1,25 @@
-
 {% extends 'producto/base.html' %}
 {% load static %}
 
 {% block content %}
-<div class="contenedorFormulario" > 
-
-    {% if "valido" in request.GET %}
-        <p style="color: white; text-align: center;">Has enviado la informacion correctamente</p>
-    {% endif %}
-
-    <form action="" method="POST" style="text-align: center;">
-        {% csrf_token %}
-    <table style="color: white; margin: 20px;">{{miFormulario.as_table}}</table>
-    <input type="submit" value="enviar" stywith="150px">
-
-    </form>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          {% if "valido" in request.GET %}
+          <p class="text-center text-success" style="color: black;">Has enviado la información correctamente</p>
+          {% endif %}
+          <form method="post" class="text-center">
+            {% csrf_token %}
+            <table class="table" style="color: black;">
+              {{ miFormulario.as_table }}
+            </table>
+            <button type="submit" class="btn btn-secondary btn-block mt-2 bg-dark text-white">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<P style="color: white;">{{request.POST}}</P>
 {% endblock content %}
