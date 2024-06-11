@@ -13,7 +13,7 @@
      Categorias:
      {% for articulo in producto %}
 
-     {% for categoria in producto.categorias.all %}
+     {% for categoria in articulo.categorias.all %}
          {{categoria.categoria}}
      {% endfor %}
          

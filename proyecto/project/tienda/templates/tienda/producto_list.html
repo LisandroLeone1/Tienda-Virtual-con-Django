@@ -3,20 +3,29 @@
 {% load static %}
 
 {% block body_tittle %}
-<span class="site-heading-lower">Tienda</span>
+<span class="site-heading-lower">Tienda Online</span>
 {% endblock body_tittle %}
 
 {% block content %}
 
-<section style="margin-top: 20px;">
+<div class="container mt-3">
+   <div class="row justify-content-center">
+     <form class="mb-3 row" action="{% url 'tienda:tienda' %}" method="get">
+        <div class="col-auto">
+            <input type="text" class="form-control" name="busqueda" placeholder="Busca por producto o marca..."  style="width: 300;">
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-dark">Buscar</button>
+        </div>
+     </form>
+   </div>
+ </div>
+
+ <section style="margin-top: 20px;">
    <div style="width: 75%; margin: auto; text-align: center; color: black">
       Categorias:
-      {% for articulo in producto %}
- 
-      {% for categoria in articulo.categorias.all %}
-      <a href="{% url 'tienda:categoria_producto' categoria.id %}" class="linkCategorias">{{categoria.categoria}}</a> 
-      {% endfor %}
-          
+      {% for categoria_unica in categorias_unicas %}
+        <a href="{% url 'tienda:categoria_producto' categoria_unica.id %}" class="linkCategorias">{{ categoria_unica.categoria }}</a>
       {% endfor %}
    </div>
  </section>

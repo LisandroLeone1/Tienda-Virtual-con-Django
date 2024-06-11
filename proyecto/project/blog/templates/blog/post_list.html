@@ -3,25 +3,11 @@
 {% load static %}
 
 {% block body_tittle %}
-<span class="site-heading-lower">Servicios</span>
+<span class="site-heading-lower">Blog</span>
 {% endblock body_tittle %}
 
 {% block content %}
 
-<section style="margin-top: 20px;"> <!-- Le da  un margen de separacion con el footer-->
-  <div style="width: 75%; margin: auto; text-align: center; color: white;">
-     Categorias:
-     {% for post in post %}
-
-     {% for categoria in post.categorias.all %}
-        <a href="{% url 'blog:categoria' categoria.id %}" class="linkCategorias">{{categoria.nombre}}</a> 
-     {% endfor %}
-         
-     {% endfor %}
-
-
-  </div>
-</section>
 {% for post in post  %}
     
 <section class="page-section clearfix">
@@ -37,7 +23,7 @@
 
          </div>
          <div style="text-align: center;">
-          <a href="{% url 'login:register' %}" class="btn btn-block mt-2" style="background-color: white; color: black;">Continuar leyendo</a>
+          <a href="{{post.url}}" class="btn btn-block mt-2" style="background-color: white; color: black;">Continuar leyendo</a>
         </div>
         </div>
       </div>

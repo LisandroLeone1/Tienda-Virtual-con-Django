@@ -8,6 +8,7 @@ class PostList(ListView):
     context_object_name = "post"
     template_name = "post_list.html"
 
+
 def categoria(request, categoria_id):
     categoria = Categoria.objects.get(id=categoria_id)
     post = Post.objects.filter(categorias = categoria)
