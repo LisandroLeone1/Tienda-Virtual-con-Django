@@ -21,7 +21,7 @@
               {{ form.password.label_tag }}
               {{ form.password }}
             </div>
-            <input type="hidden" name="next" value="{% url 'producto:home' %}" />
+            <input type="hidden" name="next" value="{% url 'tienda:tienda' %}" />
             <button type="submit" class="btn btn-secondary btn-block mt-2 bg-dark text-white">Iniciar Sesión</button>
             <a href="{% url 'producto:home' %}" class="btn btn-secondary btn-block mt-2 bg-dark text-white">Cancelar</a>
             <br>

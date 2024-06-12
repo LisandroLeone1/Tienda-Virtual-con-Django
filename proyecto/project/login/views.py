@@ -25,6 +25,6 @@ def register(request: HttpRequest):
 
 def cerrar_sesion(request):
     logout(request)
-    cerrar = logout(request)
-    return render(request, "producto/home.html",{"cerrar": cerrar})
+    
+    return redirect("producto:home")
     
