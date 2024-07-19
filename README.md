@@ -1,5 +1,36 @@
-Hola mi nombre es Lisandro Leone, tengo 29 años y me quiero dedicar a la programacion. Este proyecto lo lleve a cabo con el framework Django, que utiliza codigo de python.
-El proyecto se basa en una tienda deportiva que tiene diferentes secciones: home, servicios, blog, contacto, tienda, carro y login. En servicio se pueden ver los diversos servicios
-que ofrece la tienda. En contacto nos puede mandar un mensaje que llegara a mi correo. En el blog hay diferentes noticias sobre el rubro. En la tienda encontraras todos los productos
-disponibles y los podras ir agregando al carro, en el que se iran almacenando todos los productos que se agreguen, se calculara el precio total y se podra realizar el pedido que llegara
-a mi casilla de email. El carro lo podras ver unicamentes si inicas sesion a traves del login, donde podras ingresar como usuario o crearte una cuenta si aun no tenes.
+Hola mi nombre es Lisandro Leone, soy desarrollador y programador junior. Este proyecto lo lleve a cabo con la libreria Django de Python, que esta conectada a una base de datos Sqlite3. El proyecto consiste en un sitio web genérico para utilizar en una tienda, en este caso hice una tienda deportiva virtual, pero se puede adaptar.  
+
+Los miembros del staff podran ingresar como administradores desde el panel de administracion de django, y desde ahi se puede agregar o eliminar productos al catalogo, añadir nuevos posts, servicios y todo lo relacionado con la base de datos.
+
+Servicios: 
+En servicios se pueden ver los servicios que ofrece la tienda, con imagenes y una pequeña descripcion del servicio.
+
+Contacto:
+En contacto los usuarios se pueden comunicar con la tienda a traves de un formulario que llegara a la casilla de correo de la tienda.
+
+Blog:
+En el blog hay diferentes noticias sobre el rubro. Haciendo click en el boton de "Continuar leyendo" te lleva automaticamente al link de la noticia. Se pueden agregar o eliminar desde el panel de administracion.
+
+Productos:
+Todos los productos tienen las siguientes características:
+Nombre del producto
+Marca del producto
+Categoria
+Una imagen
+Precio
+Disponibilidad(True o False)
+Fecha de creacion
+Fecha de actualizacion
+
+Tienda:
+En la tienda se podran ver todos los productos disponibles, con la imagen del mismo, la marca, el nombre del producto, el precio y un boton de agregar al carro, que haciendo click en el se agregara automaticamente.
+
+Carro de compras:
+Para comenzar a agregar cosas al carro se debe haber iniciado sesion, por eso si aun no estas logeado el carro te manda a la seccion de login para que inicies sesion. Una vez logeado podras agregar o quitar productos al carro. le permite a los usuarios agregar y quitar productos del carrito de compras, a la vez se ira calculando el precio total de la compra. Estoy trabajando en que cuando se realice el pedido, llegue un email a la casilla de correo de la tienda con todos los datos del pedido.
+
+Login:
+En el login podras iniciar sesion o crearte un usuario en caso de que no tengas. El usuario se guardara automaticamente en la base de datos.
+
+Actualmente estoy trabajando en varias actualizaciones del proyecto. Principalmente en el mejoramiento del estilo visual a traves de CSS.
+
+
