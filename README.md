@@ -1,4 +1,7 @@
-Hola mi nombre es Lisandro Leone, soy desarrollador y programador junior. Este proyecto lo lleve a cabo con la libreria Django de Python, que esta conectada a una base de datos Sqlite3. El proyecto consiste en un sitio web genérico para utilizar en una tienda, en este caso hice una tienda deportiva virtual, pero se puede adaptar.  
+Proyecto desarrollado con Python y el framework Django. 
+Actualmente estoy trabajando en el desarrollo frontend del proyecto. Principalmente en el mejoramiento del estilo visual a traves de CSS.
+
+El proyecto consiste en un sitio web genérico para utilizar en una tienda, en este caso hice una tienda deportiva virtual, pero se puede adaptar.  
 
 Los miembros del staff podran ingresar como administradores desde el panel de administracion de django, y desde ahi se puede agregar o eliminar productos al catalogo, añadir nuevos posts, servicios y todo lo relacionado con la base de datos.
 
@@ -31,6 +34,6 @@ Para comenzar a agregar cosas al carro se debe haber iniciado sesion, por eso si
 Login:
 En el login podras iniciar sesion o crearte un usuario en caso de que no tengas. El usuario se guardara automaticamente en la base de datos.
 
-Actualmente estoy trabajando en varias actualizaciones del proyecto. Principalmente en el mejoramiento del estilo visual a traves de CSS.
+
 
 
