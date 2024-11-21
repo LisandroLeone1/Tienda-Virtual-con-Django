@@ -1,5 +1,6 @@
+PROYECTO CANCELADO
+Fue uno de mis primeros proyectos que me sirvio de practica para mis actuales proyectos.
 Proyecto desarrollado con Python y el framework Django. 
-Actualmente estoy trabajando en el desarrollo frontend del proyecto. Principalmente en el mejoramiento del estilo visual a traves de CSS.
 
 El proyecto consiste en un sitio web genérico para utilizar en una tienda, en este caso hice una tienda deportiva virtual, pero se puede adaptar.  
 
